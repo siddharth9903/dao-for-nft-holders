@@ -35,5 +35,11 @@ module.exports = {
       url: process.env.QUICKNODE_HTTP_URL,
       accounts: [process.env.PRIVATE_KEY],
     },
+    ganache: {
+      url: "HTTP://127.0.0.1:7545",
+      accounts: [
+        `578dbc9135a95d4b46268fbeef15fe9dc207c8ac7dcb260afaebd00eb03c71d6`,
+      ],
+    }
   },
 };
