@@ -10,7 +10,10 @@ import {
   CRYPTODEVS_NFT_CONTRACT_ADDRESS
 } from '../constants'
 import styles from '../styles/Home.module.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../components/Header'
+import Link from 'next/link'
+import Card1 from '../components/Card1/Card1'
 
 export default function Home () {
   const [treasuryBalance, setTreasuryBalance] = useState('0')
@@ -295,9 +298,18 @@ export default function Home () {
         <div className={styles.description}>No proposals have been created</div>
       )
     } else {
+      // proposalObj={
+      //   proposalId:p.proposalId,
+      //   nftTokenId:p.nftTokenId,
+      //   deadline:p.deadline.toLocaleString(),
+      //   yayVotes:p.yayVotes,
+      //   nayVotes:p.nayVotes,
+      //   executed:p.executed.toString(),
+      // }
       return (
         <div>
-          {proposals.map((p, index) => (
+          <Card1 />
+          {/* {proposals.map((p, index) => (
             <div key={index} className={styles.proposalCard}>
               <p>Proposal ID: {p.proposalId}</p>
               <p>Fake NFT to Purchase: {p.nftTokenId}</p>
@@ -334,7 +346,7 @@ export default function Home () {
                 <div className={styles.description}>Proposal Executed</div>
               )}
             </div>
-          ))}
+          ))} */}
         </div>
       )
     }
@@ -384,6 +396,7 @@ export default function Home () {
             >
               View Proposals
             </button>
+            <Link href={'viewproposals'}>View Proposals</Link>
           </div>
           {renderTabs()}
           {/* Display additional withdraw button if connected wallet is owner */}
