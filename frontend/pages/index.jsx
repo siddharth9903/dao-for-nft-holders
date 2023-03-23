@@ -353,7 +353,7 @@ export default function Home () {
   }
 
   return (
-    <div>
+    <div className={styles.image}>
       <Header />
       <Head>
         <title>CryptoDevs DAO</title>
@@ -396,7 +396,7 @@ export default function Home () {
             >
               View Proposals
             </button>
-            <Link href={'viewproposals'}>View Proposals</Link>
+            {/* <Link href={'viewproposals'}>View Proposals</Link> */}
           </div>
           {renderTabs()}
           {/* Display additional withdraw button if connected wallet is owner */}
@@ -415,7 +415,7 @@ export default function Home () {
           )}
         </div>
         <div>
-          <img className={styles.image} src='/cryptodevs/0.svg' />
+          {/* <img className={styles.image} src='/cryptodevs/0.svg' /> */}
         </div>
       </div>
     </div>

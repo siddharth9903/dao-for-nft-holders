@@ -202,7 +202,7 @@ export default function Governance () {
   }
 
   return (
-    <div>
+    <div className={styles.image}>
       <Header />
       <Head>
         <title>CryptoDevs DAO</title>

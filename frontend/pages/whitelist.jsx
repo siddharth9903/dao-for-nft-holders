@@ -135,7 +135,7 @@ export default function Whitelist () {
   }, [walletConnected])
 
   return (
-    <div>
+    <div className={styles.image}>
       <Header />
       <Head>
         <title>CryptoDevs DAO</title>
@@ -165,7 +165,7 @@ export default function Whitelist () {
           {renderButton()}
         </div>
         <div>
-          <img className={styles.image} src='./crypto-devs.svg' />
+          {/* <img className={styles.image} src='./crypto-devs.svg' /> */}
         </div>
       </div>
 
