@@ -10,10 +10,10 @@ import {
   CRYPTODEVS_NFT_CONTRACT_ADDRESS
 } from '../constants'
 import styles from '../styles/Home.module.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from '../components/Header'
 import Link from 'next/link'
-import Card1 from '../components/Card1/Card1'
+import Card1 from '../components/Card1/proposalCard'
 
 export default function Home () {
   const [treasuryBalance, setTreasuryBalance] = useState('0')
@@ -308,8 +308,8 @@ export default function Home () {
       // }
       return (
         <div>
-          <Card1 />
-          {/* {proposals.map((p, index) => (
+          {/* <Card1 /> */}
+          {proposals.map((p, index) => (
             <div key={index} className={styles.proposalCard}>
               <p>Proposal ID: {p.proposalId}</p>
               <p>Fake NFT to Purchase: {p.nftTokenId}</p>
@@ -346,7 +346,7 @@ export default function Home () {
                 <div className={styles.description}>Proposal Executed</div>
               )}
             </div>
-          ))} */}
+          ))}
         </div>
       )
     }
@@ -386,14 +386,29 @@ export default function Home () {
           <div className={styles.flex}>
             <button
               className={styles.button}
-              onClick={() => setSelectedTab('Create Proposal')}
+              // onClick={() => setSelectedTab('Create Proposal')}
             >
-              Create Proposal
+              {/* Create Proposal */}
+              
+              <a
+                class='nav-link'
+                href='/marketplace'
+                // onClick={e => e.preventDefault()}
+              >
+                Create Proposal
+              </a>
             </button>
             <button
               className={styles.button}
               onClick={() => setSelectedTab('View Proposals')}
             >
+              {/* <a
+                class='nav-link'
+                href='/viewproposals'
+                onClick={e => e.preventDefault()}
+              >
+                View Proposals
+              </a> */}
               View Proposals
             </button>
             {/* <Link href={'viewproposals'}>View Proposals</Link> */}

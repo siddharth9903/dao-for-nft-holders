@@ -67,9 +67,3 @@
     display: flex;
     justify-content: space-around;
 }
-
-.description {
-    line-height: 1;
-    margin: 2rem 0;
-    font-size: 1.2rem;
-  }

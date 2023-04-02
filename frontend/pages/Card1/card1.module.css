@@ -1,5 +1,5 @@
 .img {
-    background: url(../photos/19.svg);
+    background: url(../../components/photos/19.svg);
     /* background: url(../photos/bg3.jpg); */
 
     position: relative;
@@ -27,7 +27,7 @@
 }
 
 .img1 {
-    background: url(../photos/bg2.jpg);
+    background: url(../../components/photos/bg2.jpg);
     position: relative;
     top: 0;
     left: 0;
