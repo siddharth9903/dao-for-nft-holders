@@ -56,26 +56,6 @@ function ViewProposals () {
     }
   }
 
-  /**
-   * withdrawCoins: withdraws ether by calling
-   * the withdraw function in the contract
-   */
-  const withdrawDAOEther = async () => {
-    try {
-      const signer = await getProviderOrSigner(true)
-      const contract = getDaoContractInstance(signer)
-
-      const tx = await contract.withdrawEther()
-      setLoading(true)
-      await tx.wait()
-      setLoading(false)
-      getDAOTreasuryBalance()
-    } catch (err) {
-      console.error(err)
-      window.alert(err.reason)
-    }
-  }
-
   const getDAOTreasuryBalance = async () => {
     try {
       const provider = await getProviderOrSigner()
@@ -228,7 +208,7 @@ function ViewProposals () {
         getDAOOwner()
       })
     }
-  }, [walletConnected])
+  }, [])
 
   useEffect(() => {
     fetchAllProposals()

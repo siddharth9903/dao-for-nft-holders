@@ -234,18 +234,26 @@ function NFTCard({ details }) {
                         </ListGroup.Item>
                         <br></br>
                     </ListGroup>
-                    <Button
-                        style={{
-                            width: '100%',
-                            backgroundColor: '#578ab6',
-                            color: 'white',
-                            border: '1px solid white'
-                        }}
-                        variant='success'
-                        onClick={() => {createProposal(id) }}
-                    >
-                        Create Proposal
-                    </Button>
+                    {
+                        loading ?
+                            <div className={styles.description}>
+                                Loading... Waiting for transaction...
+                            </div>
+                            :
+                            <Button
+                                style={{
+                                    width: '100%',
+                                    backgroundColor: '#578ab6',
+                                    color: 'white',
+                                    border: '1px solid white'
+                                }}
+                                variant='success'
+                                onClick={() => { createProposal(id) }}
+                            >
+                                Create Proposal
+                            </Button>
+
+                    }
                 </Card.Body>
             </Card>
         </>
