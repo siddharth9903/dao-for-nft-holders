@@ -10,10 +10,12 @@ import {
   CRYPTODEVS_NFT_CONTRACT_ADDRESS
 } from '../constants'
 import styles from '../styles/Home.module.css'
+import styles2 from '../components/Card1/Card1.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from '../components/Header'
 import Link from 'next/link'
-import Card1 from '../components/Card1/proposalCard'
+// import Card1 from '../components/Card1/proposalCard'
+import ProposalCard from '../components/Card1/proposalCard'
 
 export default function Home () {
   const [treasuryBalance, setTreasuryBalance] = useState('0')
@@ -307,9 +309,9 @@ export default function Home () {
       //   executed:p.executed.toString(),
       // }
       return (
-        <div>
+        <>
           {/* <Card1 /> */}
-          {proposals.map((p, index) => (
+          {/* {proposals.map((p, index) => (
             <div key={index} className={styles.proposalCard}>
               <p>Proposal ID: {p.proposalId}</p>
               <p>Fake NFT to Purchase: {p.nftTokenId}</p>
@@ -346,8 +348,32 @@ export default function Home () {
                 <div className={styles.description}>Proposal Executed</div>
               )}
             </div>
-          ))}
-        </div>
+          ))} */}
+
+          <div className={styles2.main}>
+            <div className={styles2.main1}>
+              {/* <div className={styles.flex}> */}
+                {proposals.map((p, index) => {
+                  let details = {
+                    proposalId: p.proposalId,
+                    nftTokenId: p.nftTokenId,
+                    deadline: p.deadline,
+                    yayVotes: p.yayVotes,
+                    nayVotes: p.nayVotes,
+                    executed: p.executed
+                  }
+                  return (
+                    <ProposalCard
+                      details={details}
+                      voteOnProposal={voteOnProposal}
+                      executeProposal={executeProposal}
+                    />
+                  )
+                })}
+              {/* </div> */}
+            </div>
+          </div>
+        </>
       )
     }
   }
@@ -389,7 +415,7 @@ export default function Home () {
               // onClick={() => setSelectedTab('Create Proposal')}
             >
               {/* Create Proposal */}
-              
+
               <a
                 class='nav-link'
                 href='/marketplace'
