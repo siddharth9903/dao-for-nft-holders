@@ -224,7 +224,7 @@ function NFTCard({ details }) {
                     <Card.Img
                         variant='top'
                         className={styles.Image}
-                        src={nft_image.src}
+                        src={nft_image}
                     />
                     <ListGroup variant='flush'>
                         <ListGroup.Item>Name : {name}</ListGroup.Item>
