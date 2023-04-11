@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 import { WHITELIST_CONTRACT_ADDRESS, WHITELIST_ABI as abi } from '../constants'
 import Header from '../components/Header'
 
-export default function Whitelist () {
+export default function Whitelist() {
   const [walletConnected, setWalletConnected] = useState(false)
   const [joinedWhitelist, setJoinedWhitelist] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -109,9 +109,14 @@ export default function Whitelist () {
         return <button className={styles.button}>Loading...</button>
       } else {
         return (
-          <button onClick={addAddressToWhitelist} className={styles.button}>
-            Join the Whitelist
-          </button>
+          <>
+            <button onClick={addAddressToWhitelist} className={styles.button}>
+              Join the Whitelist
+            </button>
+            <button className={styles.button}>
+              Stop The Whitelist
+            </button>
+          </>
         )
       }
     } else {
