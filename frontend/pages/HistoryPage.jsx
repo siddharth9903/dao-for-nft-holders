@@ -1,9 +1,11 @@
 import Table from 'react-bootstrap/Table';
 import styles from '../styles/Home.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from '../components/Header';
 function HistoryPage() {
     return (
         <div className={`container ${styles.img5}`}>
+            <Header />
             <h2 style ={{display : 'flex', justifyContent : 'center', marginTop :"10px"}}>Purchased NFTs</h2>
             <div className={styles.div1}>
                 <div className={styles.div2}>
