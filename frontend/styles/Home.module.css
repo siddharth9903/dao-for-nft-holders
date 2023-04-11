@@ -1,3 +1,40 @@
+/* Starting form here for HistoryPage */
+.table {
+  border: 1px solid rgb(16, 14, 16) !important;
+  box-shadow: 1px 8px 8px rgba(45, 24, 24, 0.2);
+  
+}
+
+.table th,
+.table td {
+  border: 2px solid black;
+  padding: 0.5rem;
+}
+
+.table tr {
+  border: 1px solid rgb(4, 5, 4) !important;
+} 
+
+.img5 {
+  background: url(../components/photos/19.svg);
+  background-size: cover;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+
+}
+
+.div1 {
+  width: 100%;
+}
+
+.div2 {
+  width: 86%;
+  margin: auto
+}
+
+/* till here css of HistoryPage */
+
 .main {
   min-height: 90vh;
   display: flex;
