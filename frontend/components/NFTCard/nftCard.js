@@ -1,6 +1,6 @@
 import { Button, ListGroup } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import styles from './Card1.module.css'
+import styles from './card1.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useRef, useState } from 'react';
 import Web3Modal from 'web3modal'
