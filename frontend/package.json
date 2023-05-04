@@ -19,7 +19,9 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@rainbow-me/rainbowkit": "^0.12.12",
     "bootstrap": "^5.2.3",
+    "buffer": "^6.0.3",
     "ethers": "^5.7.2",
     "ieee754": "^1.2.1",
     "lightweight-charts": "^4.0.1",
@@ -29,6 +31,7 @@
     "react": "18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "18.2.0",
+    "wagmi": "^0.12.12",
     "web3modal": "^1.9.9"
   }
 }

@@ -19,12 +19,13 @@ const { chains, provider } = configureChains(
 
 // Imports for Rainbowkit and Wagmi
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
-import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
+import {  configureChains, createClient, WagmiConfig } from "wagmi";
+import { goerli } from 'wagmi/chains'
 import { publicProvider } from "wagmi/providers/public";
 
 // Setting Chains
 const { chains, provider } = configureChains(
-  [chain.goerli],
+  goerli,
   [publicProvider()]
 );
 
