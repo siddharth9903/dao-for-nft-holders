@@ -14,6 +14,8 @@ import { Contract, providers } from 'ethers'
 
 function HistoryPage() {
 
+    const [etherPrice, setEtherPrice] = useState('');
+
     const getDaoContractInstance = providerOrSigner => {
         return new Contract(
             CRYPTODEVS_DAO_CONTRACT_ADDRESS,
@@ -143,6 +145,19 @@ function HistoryPage() {
 
     }, [numProposals])
 
+    useEffect(() => {
+        async function fetchEtherPrice() {
+            try {
+                const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=inr');
+                const data = await response.json();
+                setEtherPrice(data.ethereum.inr * 0.1);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchEtherPrice();
+    }, []);
+
     // useEffect(() => {
     //     if (proposals.length < 0) {
     //         fetchAllProposals()
@@ -240,7 +255,7 @@ function HistoryPage() {
                                             <td>{item.yayVotes}</td>
                                             <td>{item.nayVotes}</td>
                                             <td>0.1 ETH</td>
-                                            <td>15334.81 ₹</td>
+                                            <td>{etherPrice} ₹</td>
                                         </tr>
                                     );
                                 } else {
