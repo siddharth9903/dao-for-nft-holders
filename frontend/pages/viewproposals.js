@@ -17,7 +17,7 @@ import styles from '../components/Card1/Card1.module.css'
 // import styles from './Card1/Card1.module.css'
 // import ProposalCard from './Card1/ProposalCard'
 
-function ViewProposals () {
+function ViewProposals() {
   const [treasuryBalance, setTreasuryBalance] = useState('0')
   const [numProposals, setNumProposals] = useState('0')
   const [proposals, setProposals] = useState([])
@@ -123,6 +123,7 @@ function ViewProposals () {
       console.error(error)
     }
   }
+  console.log('proposals', proposals)
 
   const voteOnProposal = async (proposalId, _vote) => {
     try {
@@ -212,6 +213,7 @@ function ViewProposals () {
 
   useEffect(() => {
     fetchAllProposals()
+    console.log('proposals', proposals)
   }, [])
 
   return (

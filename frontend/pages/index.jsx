@@ -17,7 +17,7 @@ import Link from 'next/link'
 // import Card1 from '../components/Card1/proposalCard'
 import ProposalCard from '../components/Card1/proposalCard'
 
-export default function Home () {
+export default function Home() {
   const [treasuryBalance, setTreasuryBalance] = useState('0')
   const [numProposals, setNumProposals] = useState('0')
   const [proposals, setProposals] = useState([])
@@ -245,10 +245,12 @@ export default function Home () {
   useEffect(() => {
     if (selectedTab === 'View Proposals') {
       fetchAllProposals()
+
     }
   }, [selectedTab])
+  console.log('proposals', proposals);
 
-  function renderTabs () {
+  function renderTabs() {
     if (selectedTab === 'Create Proposal') {
       return renderCreateProposalTab()
     } else if (selectedTab === 'View Proposals') {
@@ -257,7 +259,7 @@ export default function Home () {
     return null
   }
 
-  function renderCreateProposalTab () {
+  function renderCreateProposalTab() {
     if (loading) {
       return (
         <div className={styles.description}>
@@ -288,7 +290,7 @@ export default function Home () {
     }
   }
 
-  function renderViewProposalsTab () {
+  function renderViewProposalsTab() {
     if (loading) {
       return (
         <div className={styles.description}>
@@ -353,23 +355,23 @@ export default function Home () {
           <div className={styles2.main}>
             <div className={styles2.main1}>
               {/* <div className={styles.flex}> */}
-                {proposals.map((p, index) => {
-                  let details = {
-                    proposalId: p.proposalId,
-                    nftTokenId: p.nftTokenId,
-                    deadline: p.deadline,
-                    yayVotes: p.yayVotes,
-                    nayVotes: p.nayVotes,
-                    executed: p.executed
-                  }
-                  return (
-                    <ProposalCard
-                      details={details}
-                      voteOnProposal={voteOnProposal}
-                      executeProposal={executeProposal}
-                    />
-                  )
-                })}
+              {proposals.map((p, index) => {
+                let details = {
+                  proposalId: p.proposalId,
+                  nftTokenId: p.nftTokenId,
+                  deadline: p.deadline,
+                  yayVotes: p.yayVotes,
+                  nayVotes: p.nayVotes,
+                  executed: p.executed
+                }
+                return (
+                  <ProposalCard
+                    details={details}
+                    voteOnProposal={voteOnProposal}
+                    executeProposal={executeProposal}
+                  />
+                )
+              })}
               {/* </div> */}
             </div>
           </div>
@@ -412,14 +414,14 @@ export default function Home () {
           <div className={styles.flex}>
             <button
               className={styles.button}
-              // onClick={() => setSelectedTab('Create Proposal')}
+            // onClick={() => setSelectedTab('Create Proposal')}
             >
               {/* Create Proposal */}
 
               <a
                 class='nav-link'
                 href='/marketplace'
-                // onClick={e => e.preventDefault()}
+              // onClick={e => e.preventDefault()}
               >
                 Create Proposal
               </a>
@@ -436,6 +438,22 @@ export default function Home () {
                 View Proposals
               </a> */}
               View Proposals
+            </button>
+            <button
+              className={styles.button}
+              onClick={() => {
+                window.location.href = "/HistoryPage";
+              }}
+
+            >
+              {/* <a
+                class='nav-link'
+                href='/viewproposals'
+                onClick={e => e.preventDefault()}
+              >
+                View Proposals
+              </a> */}
+              View History
             </button>
             {/* <Link href={'viewproposals'}>View Proposals</Link> */}
           </div>
